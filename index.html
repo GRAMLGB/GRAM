@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRAM — Group for Risk Assessment Models</title>
+<meta name="description" content="GRAM is a selective student research group at Ecolint studying financial markets through quantitative models, economic theory, and market analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1730;
+    --ivory: #F2EBDD;
+    --gold: #C9A45C;
+    --line: rgba(242, 235, 221, 0.14);
+    --muted: rgba(242, 235, 221, 0.68);
+    --bar: 64px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--navy);
+    color: var(--ivory);
+    font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::selection { background: var(--gold); color: var(--navy); }
+
+  /* Top bar */
+  .bar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: var(--bar);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: var(--navy);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  .bar .mark {
+    font-size: 18px;
+    letter-spacing: 0.32em;
+  }
+  .bar nav { display: flex; gap: 40px; }
+  .bar nav a {
+    font-size: 16px;
+    color: var(--ivory);
+    opacity: 0.85;
+    transition: opacity 200ms ease, color 200ms ease;
+  }
+  .bar nav a:hover { opacity: 1; color: var(--gold); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--bar) + 48px) 24px 72px;
+  }
+  .hero h1 {
+    font-weight: 400;
+    font-size: clamp(76px, 15vw, 152px);
+    line-height: 1;
+    letter-spacing: 0.12em;
+    margin-right: -0.12em; /* balance trailing letter-spacing */
+    cursor: default;
+    user-select: none;
+  }
+  /* Letters light up when touched: quick to warm, slow to fade */
+  .hero h1 span {
+    transition: color 1400ms ease, text-shadow 1400ms ease;
+  }
+  .hero h1 span.lit {
+    color: var(--gold);
+    text-shadow: 0 0 14px rgba(201, 164, 92, 0.35), 0 0 42px rgba(201, 164, 92, 0.18);
+    transition-duration: 350ms;
+    transition-timing-function: ease-out;
+  }
+  .hero .full {
+    margin-top: 28px;
+    font-size: clamp(12px, 1.7vw, 19px);
+    letter-spacing: clamp(0.2em, 1vw, 0.42em);
+    margin-right: calc(-1 * clamp(0.2em, 1vw, 0.42em));
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .hero .tagline {
+    margin-top: 64px;
+    max-width: 640px;
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--muted);
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 72px;
+    padding: 14px 44px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: inherit;
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background-color 250ms ease, color 250ms ease;
+  }
+  .btn:hover, .btn:focus-visible {
+    background: var(--gold);
+    color: var(--navy);
+    outline: none;
+  }
+
+  /* Sections */
+  section.block {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 120px 24px;
+    text-align: center;
+    scroll-margin-top: var(--bar);
+  }
+  .rule {
+    max-width: 760px;
+    margin: 0 auto;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+  section.block h2 {
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.36em;
+    margin-right: -0.36em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .soon {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .branches {
+    list-style: none;
+    text-align: left;
+    border-top: 1px solid var(--line);
+  }
+  .branches li {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .branches .name {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .branches .desc { color: var(--muted); }
+
+  .note {
+    margin-top: 48px;
+    color: var(--muted);
+  }
+  .note + .note { margin-top: 12px; }
+
+  /* Form */
+  .lead {
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 56px;
+  }
+  form {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .field { margin-bottom: 36px; }
+  .field label {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    transition: color 200ms ease;
+  }
+  .field:focus-within label { color: var(--gold); }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(242, 235, 221, 0.45);
+    border-radius: 0;
+    color: var(--ivory);
+    font-family: inherit;
+    font-size: 19px;
+    padding: 8px 0;
+    outline: none;
+    transition: border-color 200ms ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .field textarea { resize: vertical; min-height: 96px; line-height: 1.5; }
+  .field select {
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--ivory) 50%), linear-gradient(135deg, var(--ivory) 50%, transparent 50%);
+    background-position: calc(100% - 10px) 55%, calc(100% - 5px) 55%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 24px;
+  }
+  .field select option { background: var(--navy); color: var(--ivory); }
+  .field select:invalid { color: rgba(242, 235, 221, 0.45); }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus { border-bottom-color: var(--gold); }
+
+  form .btn { margin-top: 16px; }
+  .submit-row { text-align: center; }
+
+  .status {
+    margin-top: 24px;
+    text-align: center;
+    min-height: 1.6em;
+    color: var(--muted);
+  }
+  .received {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  @media (max-width: 720px) {
+    body { font-size: 18px; }
+    .bar { padding: 0 16px; --bar: 56px; height: 56px; }
+    .bar .mark { font-size: 15px; letter-spacing: 0.24em; }
+    .bar nav { gap: 14px; }
+    .bar nav a { font-size: 13px; }
+    .hero { padding-left: 16px; padding-right: 16px; }
+    .hero .tagline { margin-top: 44px; }
+    .btn { margin-top: 52px; padding: 13px 32px; }
+    section.block { padding: 88px 16px; scroll-margin-top: 56px; }
+    .rule { margin: 0 16px; }
+  }
+
+  @media (max-width: 340px) {
+    .bar .mark { display: none; }
+    .bar { justify-content: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a href="#top" class="mark">GRAM</a>
+  <nav>
+    <a href="#events">Upcoming Events</a>
+    <a href="#research">Research</a>
+    <a href="#work">Current Work</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1 aria-label="GRAM"><span aria-hidden="true">G</span><span aria-hidden="true">R</span><span aria-hidden="true">A</span><span aria-hidden="true">M</span></h1>
+    <p class="full">Group for Risk Assessment Models</p>
+    <p class="tagline">A selective student research group studying financial markets through quantitative models, economic theory, and market analysis.</p>
+    <a href="#consideration" class="btn">Request Consideration</a>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block" id="events">
+    <h2>Upcoming Events</h2>
+    <p class="soon">Coming soon.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block" id="research">
+    <h2>Research</h2>
+    <p class="soon">Coming soon.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block" id="work">
+    <h2>Current Work</h2>
+    <ul class="branches">
+      <li>
+        <span class="name">Machine Learning &amp; Algorithms</span>
+        <span class="desc">Regression, neural networks and supervised learning applied to financial data.</span>
+      </li>
+      <li>
+        <span class="name">Market &amp; Financial Analysis</span>
+        <span class="desc">Fundamental, technical and financial statement analysis.</span>
+      </li>
+      <li>
+        <span class="name">Financial &amp; Economic Theory</span>
+        <span class="desc">Risk, portfolio theory, optimisation and macroeconomic research.</span>
+      </li>
+    </ul>
+    <p class="note">Competitions include the Wharton Global Youth Investment Competition, IMC Prosperity and Stevens Institute Trading Day.</p>
+    <p class="note">Co-organisers of the Ecolint Professional Speaker Series.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block" id="consideration">
+    <h2>Request Consideration</h2>
+    <p class="lead">Membership is by selection.</p>
+
+    <form id="apply" action="https://formspree.io/f/mjyypdyb" method="POST">
+      <input type="hidden" name="_subject" value="New GRAM consideration request">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="year">Year group</label>
+        <input id="year" name="year_group" type="text" required>
+      </div>
+      <div class="field">
+        <label for="branch">Branch of interest</label>
+        <select id="branch" name="branch" required>
+          <option value="" disabled selected>Select a branch</option>
+          <option>Machine Learning &amp; Algorithms</option>
+          <option>Market &amp; Financial Analysis</option>
+          <option>Financial &amp; Economic Theory</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="question">What question about markets would you want to answer?</label>
+        <textarea id="question" name="question" rows="4" required></textarea>
+      </div>
+      <div class="submit-row">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Light a letter while the cursor or a finger is on it
+  (function () {
+    var letters = document.querySelectorAll('.hero h1 span');
+    letters.forEach(function (el) {
+      el.addEventListener('mouseenter', function () { el.classList.add('lit'); });
+      el.addEventListener('mouseleave', function () { el.classList.remove('lit'); });
+    });
+
+    function touch(e) {
+      var t = e.touches[0];
+      var hit = t && document.elementFromPoint(t.clientX, t.clientY);
+      letters.forEach(function (el) { el.classList.toggle('lit', el === hit); });
+    }
+    var mark = document.querySelector('.hero h1');
+    mark.addEventListener('touchstart', touch, { passive: true });
+    mark.addEventListener('touchmove', touch, { passive: true });
+    mark.addEventListener('touchend', function () {
+      letters.forEach(function (el) { el.classList.remove('lit'); });
+    });
+  })();
+
+  // Smooth-scroll in-page links, offset for the fixed bar
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var id = link.getAttribute('href').slice(1);
+      var target = id === 'top' ? null : document.getElementById(id);
+      e.preventDefault();
+      var bar = document.querySelector('.bar').offsetHeight;
+      var y = target ? target.getBoundingClientRect().top + window.pageYOffset - bar : 0;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
+  var form = document.getElementById('apply');
+  var status = document.getElementById('status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var button = form.querySelector('button');
+    button.disabled = true;
+    status.textContent = 'Sending.';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (res) {
+      if (!res.ok) throw new Error();
+      var done = document.createElement('p');
+      done.className = 'received';
+      done.textContent = 'Received. We will be in touch.';
+      form.replaceWith(done);
+    }).catch(function () {
+      status.textContent = 'Not sent. Please try again.';
+      button.disabled = false;
+    });
+  });
+</script>
+</body>
+</html>
