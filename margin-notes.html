@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margin Notes — GRAM</title>
+<meta name="description" content="Margin Notes: the working notes of GRAM, the Group for Risk Assessment Models at Ecolint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="research.css">
+</head>
+<body>
+
+<header class="bar">
+  <a href="./" class="mark">GRAM</a>
+  <nav>
+    <a href="margin-notes.html" aria-current="page">Margin Notes</a>
+    <a href="essays.html">Essays</a>
+    <a href="working-papers.html">Working Papers</a>
+  </nav>
+</header>
+
+<main>
+  <p class="kicker">Research · Notes</p>
+  <h1 class="page-title">Margin Notes</h1>
+  <p class="intro">We are learning too.</p>
+  <p class="intro">These are our working notes: what we read, what we test, and what we understand so far. Shared as we write them.</p>
+
+  <ul class="entries">
+    <!--
+      To add a note: copy notes/_template.html to notes/<short-name>.html,
+      write it, then copy this block above the others (newest first):
+
+      <li>
+        <a href="notes/short-name.html">
+          <span class="meta">Note 1 · 9 November 2026</span>
+          <span class="title">Title</span>
+          <span class="summary">One sentence on what it covers.</span>
+        </a>
+      </li>
+
+      Delete the "empty" line below once the first note is up.
+    -->
+    <li class="empty">The first notes will be published shortly.</li>
+  </ul>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

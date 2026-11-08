@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essays — GRAM</title>
+<meta name="description" content="Essays: original arguments on markets and risk from GRAM, the Group for Risk Assessment Models at Ecolint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="research.css">
+</head>
+<body>
+
+<header class="bar">
+  <a href="./" class="mark">GRAM</a>
+  <nav>
+    <a href="margin-notes.html">Margin Notes</a>
+    <a href="essays.html" aria-current="page">Essays</a>
+    <a href="working-papers.html">Working Papers</a>
+  </nav>
+</header>
+
+<main>
+  <p class="kicker">Research · Essays</p>
+  <h1 class="page-title">Essays</h1>
+  <p class="intro">When we have something of our own to say.</p>
+  <p class="intro">Original arguments on markets and risk, written with care and published when they are ready.</p>
+
+  <ul class="entries">
+    <!--
+      To add a essay: copy essays/_template.html to essays/<short-name>.html,
+      write it, then copy this block above the others (newest first):
+
+      <li>
+        <a href="essays/short-name.html">
+          <span class="meta">Essay 1 · November 2026</span>
+          <span class="title">Title</span>
+          <span class="summary">One sentence on what it covers.</span>
+        </a>
+      </li>
+
+      Delete the "empty" line below once the first essay is up.
+    -->
+    <li class="empty">The first essay is in preparation.</li>
+  </ul>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

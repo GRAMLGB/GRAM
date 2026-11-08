@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working Papers — GRAM</title>
+<meta name="description" content="Working Papers: original research on risk assessment models from GRAM, the Group for Risk Assessment Models at Ecolint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="research.css">
+</head>
+<body>
+
+<header class="bar">
+  <a href="./" class="mark">GRAM</a>
+  <nav>
+    <a href="margin-notes.html">Margin Notes</a>
+    <a href="essays.html">Essays</a>
+    <a href="working-papers.html" aria-current="page">Working Papers</a>
+  </nav>
+</header>
+
+<main>
+  <p class="kicker">Research · Models</p>
+  <h1 class="page-title">Working Papers</h1>
+  <p class="intro">Original research on risk assessment models.</p>
+  <p class="intro">Slow, careful work: how risk is measured, where the models fail, and what the evidence shows. Each paper is published once its methods and results have been checked.</p>
+
+  <ul class="entries">
+    <!--
+      To add a paper: copy papers/_template.html to papers/<short-name>.html,
+      write it, then copy this block above the others (newest first):
+
+      <li>
+        <a href="papers/short-name.html">
+          <span class="meta">Paper 1 · November 2026</span>
+          <span class="title">Title</span>
+          <span class="summary">One sentence on what it covers.</span>
+        </a>
+      </li>
+
+      Delete the "empty" line below once the first paper is up.
+    -->
+    <li class="empty">The first paper is in preparation.</li>
+  </ul>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

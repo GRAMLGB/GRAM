@@ -169,6 +169,40 @@
   }
   .branches .desc { color: var(--muted); }
 
+  /* Research series: each row opens its own page */
+  .series {
+    list-style: none;
+    text-align: left;
+    border-top: 1px solid var(--line);
+  }
+  .series a {
+    display: block;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .series .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+  .series .name {
+    font-size: 26px;
+    transition: color 250ms ease;
+  }
+  .series .cadence {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .series .desc { color: var(--muted); }
+  .series a:hover .name,
+  .series a:focus-visible .name { color: var(--gold); }
+  .series a:focus-visible { outline: none; }
+
   .note {
     margin-top: 48px;
     color: var(--muted);
@@ -307,7 +341,26 @@
 
   <section class="block" id="research">
     <h2>Research</h2>
-    <p class="soon">Coming soon.</p>
+    <ul class="series">
+      <li>
+        <a href="margin-notes.html">
+          <span class="top"><span class="name">Margin Notes</span><span class="cadence">Weekly</span></span>
+          <span class="desc">We are learning too. Our working notes, shared as we write them.</span>
+        </a>
+      </li>
+      <li>
+        <a href="essays.html">
+          <span class="top"><span class="name">Essays</span><span class="cadence">Occasional</span></span>
+          <span class="desc">Original arguments on markets and risk, when we have something of our own to say.</span>
+        </a>
+      </li>
+      <li>
+        <a href="working-papers.html">
+          <span class="top"><span class="name">Working Papers</span><span class="cadence">In progress</span></span>
+          <span class="desc">Original research on risk assessment models. Slow, careful work.</span>
+        </a>
+      </li>
+    </ul>
   </section>
 
   <hr class="rule">

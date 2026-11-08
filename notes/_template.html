@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title — GRAM</title>
+<meta name="description" content="One sentence on what it covers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../research.css">
+</head>
+<body>
+
+<header class="bar">
+  <a href="../" class="mark">GRAM</a>
+  <nav>
+    <a href="../margin-notes.html" aria-current="page">Margin Notes</a>
+    <a href="../essays.html">Essays</a>
+    <a href="../working-papers.html">Working Papers</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <header>
+      <p class="kicker">Margin Notes · Note 1</p>
+      <h1>Title</h1>
+      <p class="byline">Author name · 9 November 2026</p>
+    </header>
+
+    <div class="body">
+      <p class="lede">Opening paragraph. One or two sentences that say what this is about and why it matters.</p>
+
+      <p>Body text.</p>
+
+      <h2>A section heading</h2>
+
+      <p>Body text. <a href="https://example.com">A link</a> looks like this.</p>
+
+      <blockquote>A quotation or a key idea, set apart.</blockquote>
+
+      <p class="formula">VaR = μ − z · σ</p>
+
+      <ul>
+        <li>A point</li>
+        <li>Another point</li>
+      </ul>
+
+      <table>
+        <tr><th>Asset</th><th>Return</th><th>Volatility</th></tr>
+        <tr><td>Example</td><td>8.0%</td><td>15.0%</td></tr>
+      </table>
+
+      <figure>
+        <img src="image.png" alt="Describe the chart">
+        <figcaption>Figure 1. Caption.</figcaption>
+      </figure>
+    </div>
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <ol>
+        <li>Author, <em>Title</em>, Publisher, Year.</li>
+      </ol>
+    </section>
+
+    <a class="back" href="../margin-notes.html">All Margin Notes</a>
+  </article>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
