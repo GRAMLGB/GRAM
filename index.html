@@ -377,6 +377,12 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Always open at the top: no restored scroll position, no #section jump
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0);
+  window.addEventListener('load', function () { window.scrollTo(0, 0); });
+
   // Light a letter while the cursor or a finger is on it
   (function () {
     var letters = document.querySelectorAll('.hero h1 span');
