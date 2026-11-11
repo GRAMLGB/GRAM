@@ -86,6 +86,12 @@ main {
   color: var(--muted);
 }
 .intro + .intro { margin-top: 16px; }
+.byline-page {
+  margin-top: 16px;
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+}
 
 .entries {
   list-style: none;
@@ -156,6 +162,7 @@ article .byline {
 .body a:hover { color: var(--gold); }
 .body ul, .body ol { padding-left: 1.3em; }
 .body li + li { margin-top: 0.4em; }
+.body li > ul { margin-top: 0.4em; list-style: circle; }
 .body blockquote {
   margin: 1.8em 0;
   padding-left: 24px;
