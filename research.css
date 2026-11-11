@@ -86,12 +86,6 @@ main {
   color: var(--muted);
 }
 .intro + .intro { margin-top: 16px; }
-.byline-page {
-  margin-top: 16px;
-  text-align: center;
-  font-style: italic;
-  color: var(--muted);
-}
 
 .entries {
   list-style: none;
