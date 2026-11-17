@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Swings and Volatility — GRAM</title>
+<meta name="description" content="Margin Notes, Note 2: volatility research for GRAM One in relation to risk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../research.css">
+</head>
+<body>
+
+<header class="bar">
+  <a href="../" class="mark">GRAM</a>
+  <nav>
+    <a href="../margin-notes.html" aria-current="page">Margin Notes</a>
+    <a href="../essays.html">Essays</a>
+    <a href="../working-papers.html">Working Papers</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <header>
+      <p class="kicker">Margin Notes · Note 2</p>
+      <h1>Price Swings and Volatility</h1>
+      <p class="byline">Lochlan de Wilde · 17 November 2026</p>
+    </header>
+
+    <div class="body">
+      <p class="lede">Volatility research for GRAM One in relation to risk.</p>
+
+      <h2>What is volatility?</h2>
+
+      <p>Volatility is the measure of how much and how quickly an asset, a security or a market index fluctuates (changes) over time. Volatility shows how far the price moves around the average.</p>
+      <p>For example, Apple’s average price return over the last 12 weeks has been +15.17%.</p>
+      <p>This average is made up of market swings and price changes that all go back to the level.</p>
+
+      <blockquote>Important: Volatility represents uncertainty and magnitude of swings—not the direction (up or down) of the market.</blockquote>
+
+      <h2>What are price swings?</h2>
+
+      <p>Price swings are the actual movements of the stock. Unlike volatility, price swings are directional, meaning price swings are the actual movement of the price upwards or downwards, while volatility measures the deviation away from the average price return.</p>
+
+      <h2>What is “risk”?</h2>
+
+      <p>It is very difficult to generalize the term risk, as it can be used differently in different contexts, such as credit risk, liquidity risk and operational risk, but in these notes I will refer to risk as the exposure to uncertainty and potential financial loss.</p>
+
+      <h2>What causes a company’s price to “swing”?</h2>
+
+      <p>The short answer is supply and demand. When more people are buying, the stock goes up, but when people are selling, a company’s stock tends to go down.</p>
+
+      <h2>How can volatility help get a sense of a stock’s risk levels?</h2>
+
+      <p>At its simplest, risk is not knowing where you will end up. When a stock is very volatile (above 5% of average price) there is a bigger spread (more outcomes), whereas a less volatile stock has a more predictable outcome.</p>
+      <p>E.g. stock Z is predicted to have ±20% volatility this year. This means the stock’s predicted returns are going to fall between +20% and −20%.</p>
+
+      <h2>How we’d use volatility in an ideal world</h2>
+
+      <p>We want to eliminate stocks that carry too much risk.</p>
+      <ul>
+        <li>Gain access to S&amp;P 100 stocks’ volatility data.</li>
+        <li>Record every stock’s closing price from the past 2 years.</li>
+        <li>Calculate how much the price typically moves each day and convert it into a yearly figure.</li>
+      </ul>
+
+      <p class="formula">Annual volatility ≈ daily volatility × √252</p>
+
+      <ul>
+        <li>Separate them into low risk (20% &gt; x), medium (20%–30%) and high risk (40% &lt; x).</li>
+        <li>Filter removes any stock above 40% swings.</li>
+      </ul>
+
+      <p><strong>The problem:</strong> saying no to loss is also saying no to gain. A company with 40% deviation could gain 40%, theoretically.</p>
+
+      <p><strong>Real example:</strong> In 2023, Nvidia’s volatility was around 50% a year, well above our 40% limit, so the ideal-world model would have thrown it out. That year its share price roughly tripled (approximate figures). Most of its “risk” was the price shooting upward.</p>
+
+      <h2>Solution</h2>
+
+      <p>That’s why we don’t measure only risk; we measure return as well. The Sharpe ratio puts the two together: take the portfolio’s return, subtract the risk-free rate, and divide by the standard deviation (volatility). The result tells you how much extra return you get for each unit of risk you take on. We’ll cover how to estimate future returns in a later lesson.</p>
+
+      <div class="formula">
+        Sharpe ratio =
+        <span class="frac"><span>R<sub>p</sub> − R<sub>f</sub></span><span>σ<sub>p</sub></span></span>
+      </div>
+
+      <ul class="terms">
+        <li><em>R<sub>p</sub></em>: Portfolio return</li>
+        <li><em>R<sub>f</sub></em>: Risk-free rate (such as government Treasury bonds)</li>
+        <li><em>σ<sub>p</sub></em>: Standard deviation of the portfolio’s excess return (volatility)</li>
+      </ul>
+    </div>
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <ol>
+        <li>Sharpe ratio formula and definitions: Robeco.com.</li>
+      </ol>
+    </section>
+
+    <a class="back" href="../margin-notes.html">All Margin Notes</a>
+  </article>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
