@@ -261,3 +261,11 @@ footer {
   .bar .mark { display: none; }
   .bar { justify-content: center; }
 }
+
+/* Figures and marks carried over from the original notes */
+.body figure { margin: 1.8em 0; }
+.body figure a { display: block; border-bottom: none; }
+.body figure img { border-radius: 2px; }
+.body u { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--muted); }
+.body blockquote p + p { margin-top: 0.8em; }
+.body a { overflow-wrap: anywhere; }

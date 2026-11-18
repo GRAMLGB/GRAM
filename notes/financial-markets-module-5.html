@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Markets, Module 5 — GRAM</title>
+<meta name="description" content="Margin Notes, Note 2: Derivatives: forwards, futures and options, with a detour through OPEC and the oil crises.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../research.css">
+</head>
+<body>
+
+<header class="bar">
+  <a href="../" class="mark">GRAM</a>
+  <nav>
+    <a href="../margin-notes.html" aria-current="page">Margin Notes</a>
+    <a href="../essays.html">Essays</a>
+    <a href="../working-papers.html">Working Papers</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <header>
+      <p class="kicker">Margin Notes · Note 2</p>
+      <h1>Financial Markets, Module 5</h1>
+      <p class="byline">Ethan Zameck · 17 August 2026</p>
+    </header>
+
+    <div class="body">
+      <p><strong>A derivative market reflects a market in parallel with another market, </strong>think of a derivative market as an exchange of contracts that are used to transfer risk between parties, at a price set by expectations about an underlying asset, without necessarily transferring the asset itself.</p>
+      <p><strong>Forward contract:</strong> a contract to deliver at a future date (which we either call the exercise date or maturity date), both sides are locked into the contract because they must legally buy or sell the underlying asset.</p>
+      <p>These contracts actually trade physical assets, so they are mainly OTC (Over the Counter)</p>
+      <p><strong>OTC</strong>: trading done outside of a formal exchange, it involves two parties directly.</p>
+      <p>FX: Foreign exchange (global market for trading national currencies)</p>
+      <p>FX Forwards are like pairs of zero coupon bonds</p>
+      <p><strong>Forward rates reflect interest rates in the two currencies</strong></p>
+      <p>Forward interest parity: a financial theory that states that the difference in interest rates between two countries must equal the difference between the forward exchange rate and the <strong>spot exchange rate </strong>(current real time price to trade one currency for another, usually settling within two business days)</p>
+      <figure><a href="img/financial-markets-module-5/figure-1.jpg"><img src="img/financial-markets-module-5/figure-1.jpg" alt="Covered interest rate parity, with the equation for the forward exchange rate" loading="lazy"></a></figure>
+      <p>Forward Rate Agreements: Custom OTC agreement that allows two parties to lock in an interest rate for a future period.</p>
+      <figure><a href="img/financial-markets-module-5/figure-2.jpg"><img src="img/financial-markets-module-5/figure-2.jpg" alt="Forward rate agreement settlement formula and its terms" loading="lazy"></a></figure>
+      <p>Notice: the Forward Rate Agreement does not actually have anything linked to it, but is instead a bet on what the (L-R) will turn out to be. If you look at the definitions, you will notice that we are only subtracting what the interest rate will be at the end of the contract (which relies on a market benchmark, such as the SOFR or EURIBOR) by what the agreed upon interest rate for the contract is, if it turns out to be negative then the buyer must pay and if positive he receives. Therefore, you could think of it as a bet on how much it will cost to borrow a currency. And what’s interesting is that for an OTC FRA, they usually don’t even require a formal margin. What they do instead is either decide whether you will be capable of paying with a <strong>credit line </strong>(where the bank will extend the buyer a limit based on their creditworthiness and trusts them to pay the settlement) or a <strong>CSA which means Credit Support Annex </strong>(collateral agreement bolted onto the master contract, the ISDA Master Agreement, which defines the framework behind any agreement).</p>
+      <p>Futures Contracts: differ from forward contracts, because contractors deal with an exchange rather than each other, and thus do not need to assess each other’s creditworthiness.</p>
+      <p>They are standardized retail products and rather tend not to be custom OTC contracts.</p>
+      <p>Futures contracts are reliant on margin calls to guarantee performance.</p>
+      <p>The first futures market began in Osaka, 1670s. It was the world’s only futures market until the 1860s.</p>
+      <p>It was a center for rice trade with 91 rice warehouses in 1673. Rice was considered the underlying primary market.</p>
+      <p>Futures exchanges had precise definitions on quality, delivery, date and place and even had experts evaluate rice quality and clearinghouses for contracts. These are the derivatives, because it relied on these factors.</p>
+      <p>CBOT: Chicago Board of Trade, founded in 1848</p>
+      <p>CBOT merged with the CME (Chicago Mercantile Exchange) in 2007 and now calls themselves the CME group.</p>
+      <p>CME Clearinghouse: A CCP (Central counterparty) which acts like a neutral counterparty to guarantee performance and settlements for trades.</p>
+      <p>All exchange-traded contracts pass from the broker to the clearinghouse. A buyer who exchanges his funds for a contract receives his contract and transfers his funds that pass through the broker and then the clearinghouse. This does not occur for OTC Contracts. BUT the counterparty does not always require 100% of the total contract value, and instead, about 5-10% of it.</p>
+      <p>Why would a farmer prefer to trade rice futures over just standard cultivating and selling?</p>
+      <p>Futures allow a farmer to lock in a price for a future delivery, that price is set, no matter the current market price. For a farmer, this ensures that his revenue will cover his expenses.</p>
+      <p>But this requires three things:</p>
+      <ul>
+       <li>A short position on either a (USD) sum or a contract</li>
+       <li>A Hedge account on a futures exchange</li>
+       <li>A physical trade</li>
+      </ul>
+      <p>Short position: A short position is when a user will borrow either <u>money</u> (will explain), contracts or shares from a brokerage, to then sell whatever he would like to sell on the market and buy it back, which usually comes at a difference that he must pay back or keep</p>
+      <p>When it comes to money, he can buy the contract/share instead and then sell it at a difference.</p>
+      <p><strong>Buying or selling futures contracts: </strong>When buying, one must post initial margin with the futures commission merchant</p>
+      <p>Most people do not have intention of taking delivery of the commodity</p>
+      <p>It’s the same as when one sells a contract, usually there is no intention of selling the commodity</p>
+      <p>Every day, the exchange defines a price called the settlement price, and that is the last trade on that day. Every day until expiration, a buyer’s margin account is debited or credited with the amount:</p>
+      <p class="formula">Change in settlement price times contract amount</p>
+      <p>If the contract is cash settled, on the last day, the margin account is credited with:</p>
+      <p class="formula">(cash settlement price – last settlement price) × contract amount</p>
+      <p>If the contract is physical delivery, on the last day, the buyer must receive his commodity</p>
+      <p>The “CASH” settlement: No physical delivery</p>
+      <p>The “cash settlement price minus the last settlement price” is a way to show the difference you would have made if you actually had the commodity. When you subtract from the cash settlement, it looks solely on the difference between the price you paid to what the futures contract is at.</p>
+      <p>It’s looking for the difference between what the commodity/stock/whatever is currently at to what you bought it at initially.</p>
+      <figure><a href="img/financial-markets-module-5/figure-3.jpg"><img src="img/financial-markets-module-5/figure-3.jpg" alt="Lecture slide: Fair Value in Futures Contract" loading="lazy"></a></figure>
+      <p>Fair value: price of equilibrium</p>
+      <h2>OPEC: Organization of Petroleum Exporting Countries</h2>
+      <p>Established in 1960 by Iran, Iraq, Kuwait, Saudi Arabia and Venezuela</p>
+      <p>More countries joined afterwards:</p>
+      <ul>
+       <li>Qatar (1961)</li>
+       <li>Indonesia and Libya (1962)</li>
+       <li>Abu Dhabi* (1967)</li>
+       <li>UAE (1974)</li>
+       <li>Algeria (1969)</li>
+       <li>Nigeria (1971)</li>
+       <li>Ecuador (1973)</li>
+       <li>Gabon (1975)</li>
+      </ul>
+      <p>OPEC is quite weak today because of conflict in the Middle East</p>
+      <p><u>*Abu Dhabi was separate to the UAE before 2nd December of 1971</u></p>
+      <h3>Brief beginning of OPEC</h3>
+      <p>It began in 1949 after Venezuela suggested to the 4 other founding countries to build an establishment to exchange views and tighten relations in order to export oil more efficiently. At that time, the USA was the top oil exporter and consumer, and OPEC countries were motivated to form a counterweight.</p>
+      <h3>Significance of OPEC and the Arab League during the Yom-Kippur war of 1973 (which led to the First Oil Crisis of 1973-74)</h3>
+      <p>In October 1973, the OAPEC (Organisation of Arab Petroleum Exporting Countries) declared significant production cuts on oil and an embargo on the USA due to their support of Israel.</p>
+      <p>The War ended like this:</p>
+      <figure><a href="img/financial-markets-module-5/figure-4.jpg"><img src="img/financial-markets-module-5/figure-4.jpg" alt="The belligerents of the Yom Kippur War of 1973" loading="lazy"></a></figure>
+      <p>And Israel won, so they had a reason to be pissed. That wasn’t the first time they tried to enact an embargo on the US, there was a very ineffective attempt after the Six Day War of 1967. The result of their decision led to a sharp rise in oil prices and revenues. It led to the UK temporarily allowing a three-day workweek and a sharp rise from $3/barrel to $12/barrel.</p>
+      <figure><a href="img/financial-markets-module-5/figure-5.jpg"><img src="img/financial-markets-module-5/figure-5.jpg" alt="Lecture slide: Second Oil Crisis, 1979 to 1980" loading="lazy"></a></figure>
+      <p>All the instability led to the Strategic Petroleum Reserve (1975) in caverns in Louisiana and Texas. There is only a 60-day supply.</p>
+      <p>In 2000, US President Clinton established a 2 million barrel heating oil reserve in NY and New Haven to help stabilize US heating oil prices. The Government has sold from their reserves on a number of occasions since 2000 when price triggers were hit.</p>
+      <p>The Persian Gulf war of 1990-91 also made an impact.</p>
+      <p>That began on August 2nd 1990, when Iraq launched a surprise invasion on Kuwait under Saddam Hussein. The UN gave Iraq a deadline to withdraw by Jan 15 of 1991. But they didn’t… That led to an air bombardment of Iraq and its Kuwaiti positions. Eventually, this led to an Allied ground invasion. The war ended on Feb 26 of 1991.</p>
+      <ul>
+       <li>In 2008, at the height of the financial crisis, the price per barrel once hit $113/barrel.</li>
+       <li>In 2016, that fell below $30/barrel</li>
+       <li>Right now, an OPEC basket is at $77/barrel (as of 6 Aug)</li>
+      </ul>
+      <p>Stock Price Index Futures:</p>
+      <ul>
+       <li>Cash settlement rather than physical delivery</li>
+      </ul>
+      <p>Cost-of-carry model for pricing index futures</p>
+      <figure><a href="img/financial-markets-module-5/figure-6.jpg"><img src="img/financial-markets-module-5/figure-6.jpg" alt="Cost-of-carry formula for index futures, F = S × e^((r − q)t), and its terms" loading="lazy"></a></figure>
+      <p>“Cost of Carry”: cost of owning an asset</p>
+      <h3>Federal Funds Futures Market</h3>
+      <ul>
+       <li>It was created by CBOT in 1988,</li>
+       <li>The settlement price is 100 minus annualized FFR (Federal Funds Rate)</li>
+       <li>Shows timing of expected actions of FOMC (Federal Open Market Committee)</li>
+       <li>One-month-ahead forecast errors typically in the ten to twenty basis point range.</li>
+      </ul>
+      <p><strong>Backwardation and Contango: </strong>Describes the shape of a commodity futures curve:</p>
+      <ul>
+       <li>Backwardation means the future price is below the commodity’s spot price</li>
+       <li>Contango means the future price is above the commodity’s spot price</li>
+      </ul>
+      <p>Both are usually due to cost-of-carry (insurance, interest, storage, etc…)</p>
+      <p><strong>Federal Funds Futures Market:</strong> Financial market where investors trade contracts based on where the Federal Reserve will set interest rates. The contracts trade on the CME (Chicago Mercantile Exchange), and it tracks the EFFR (Effective Federal Funds Rate), which is the daily exchange rate banks charge each other for overnight loans. The Pricing model resembles this:</p>
+      <p class="formula">Expected Interest Rate = 100 − Contract Price</p>
+      <h2>Options</h2>
+      <p>A summary from the FM Course, see the provided document for additional, but important information.</p>
+      <h3>The basic kinds of options available</h3>
+      <ul>
+       <li>Call Options, which give the right to buy</li>
+       <li>Put Options, which give the right to sell</li>
+      </ul>
+      <p>With options, one pays money to have a choice in the future, the exercised choice usually depends on the underlying asset price. Options are truncated claims on assets that you usually buy in sets of 100, called <strong>contracts</strong>.</p>
+      <h3>The terms of an Options Contract</h3>
+      <ul>
+       <li>Exercise date (the day you must sell or close your contract, or else it becomes worthless because we now consider it expired)</li>
+       <li>Exercise price (the price at which it closes at, and therefore what determines whether you made a profit or a loss on the contract)</li>
+       <li>The Definition of the underlying and number of shares</li>
+      </ul>
+      <p>In/Out the Money: This says whether the option’s underlying price is higher or lower than the current market price.</p>
+      <p>If it's <u>In the Money</u>, then the share price is more advantageous to the option’s strike price (the price you believe it will be higher or lower than, depending on whether it is a call or put option), but it depends on what kind of option it is:</p>
+      <ul>
+       <li>ITM* Call Option: the strike price is lower than the current price</li>
+       <li>ITM Put Option: the strike price of your option is higher than the current price</li>
+       <li>OTM* Call Option: the strike price is higher than the market price</li>
+       <li>OTM Put Option: the strike price is lower than the market price</li>
+      </ul>
+      <p><u>ITM*= In the Money</u></p>
+      <p><u>OTM*=Out the Money</u></p>
+      <h3>Bid vs Ask Price</h3>
+      <ul>
+       <li>The Bid price is the price a dealer is offering you for your options.</li>
+       <li>The Ask price is the lowest price a seller is willing to pay.</li>
+      </ul>
+      <p><strong>Kenneth Arrow’s 1964 article: </strong>The inefficiency of economic markets lies in how much accessible risk there is to take.</p>
+      <p><strong>Stephen Ross </strong>made this idea a <em>raison d’être</em> of options markets.</p>
+      <p>In his 1976 article “Options and Efficiency” he said that financial options have a central role in “completing the market”</p>
+      <p>(if you are interested in learning more about this, there is this really interesting (but short) paper that speaks about it and makes a correlation between these things</p>
+      <p><strong>see</strong>: <a href="https://personal.lse.ac.uk/martiniw/steve.pdf">https://personal.lse.ac.uk/martiniw/steve.pdf</a></p>
+      <p>Obviously the math this guy is about to show might seem completely unreadable, just read the paragraphs or if you want we will discuss it as a group and go through it)</p>
+      <p>(actually, even I don't get allat so I’ll make it a task to understand)</p>
+      <h3>Shefrin and Statman: “Silver lining theory”</h3>
+      <blockquote><p>“During the 1980s and 1990s, Shefrin and Statman applied behavioral ideas to the field of finance, calling their approach "<strong>behavioral finance</strong>," a term which had not previously been in use. Their work offered explanations for such phenomena as the dividend puzzle, investors' disposition to sell winners too early and hold losers too long, the design and marketing of financial products, behavioral beta, behavioral portfolio theory, and a behavioral approach to financial market regulation based on the concept of fairness and/or ethics. Shefrin and Statman's paper on the dividend puzzle was the first in finance to apply prospect theory, the approach developed by Kahneman and Tversky to explain how people choose among risky prospects.”</p>
+      <p>“Shefrin and Statman coined the term "disposition effect" for investors' disposition to sell winners too early and hold losers too long. They proposed that the disposition effect reflects four psychological elements, namely loss aversion (from Kahneman and Tversky's prospect theory value function), mental accounting, regret avoidance, and lack of self-control. Shefrin has long argued that the disposition effect reflects how these four elements combine. In particular, he contends that prospect theory alone does not explain the full extent of disposition behavior, especially its self-nudging features. The disposition effect has become the most studied, in the academic finance literature, of psychological behavior patterns exhibited by individual investors.”</p></blockquote>
+      <p>*I didn’t write this, it’s from Wikipedia. When it comes from elsewhere, I always mention it.</p>
+      <p>See: <a href="https://www.jstor.org/stable/2327802?googleloggedin=true&amp;googleloggedin=true">https://www.jstor.org/stable/2327802?googleloggedin=true&amp;googleloggedin=true</a> Also: <a href="https://www.jstor.org/stable/183904">https://www.jstor.org/stable/183904</a>, that is originally where the term “silver lining” came from, then used for this: <u>why do investors prefer cash dividends?</u></p>
+      <h3>Silver lining theory</h3>
+      <blockquote><p>‘By purchasing shares that pay good dividends, most investors persuade themselves of their prudence, based on the expected income. They feel the gain potential is a super added benefit. Should the stock fall in value from their purchase level, they console themselves that the dividend provides a return on their cost.’</p><p>Observe in fig. 3 that the right-most segregation region is associated with a positive capital gain; therefore, the investor’ segregates in order to obtain ‘super added benefit’ from this gain. But in the left-most segregation region, where a sizeable capital loss is incurred, he segregates in order to treat the dividend as a silver lining with which he can ‘console himself’. In the intermediate region of ‘small’ capital losses, he integrates in order to offset part or all of the capital loss by the dividend.</p></blockquote>
+      <p><em>Extract from Shefrin and Statman (1984), explaining the Silver Lining.</em></p>
+      <p><u>Futures Exchanges: a market that trades options on futures.</u></p>
+      <h3>In the Money, Out the Money, Exercise Date and Strike Price</h3>
+      <ul>
+       <li>At the Exercise date of an option, where the current price stands depending on the Strike Price will decide whether your option is worthless or valuable at that moment.</li>
+       <li>If your option is worth less than what it would be if it was at the Strike Price, you are OTM, and therefore your option has no intrinsic value.</li>
+      </ul>
+      <p>The <strong>Put-Call Parity Relation:</strong></p>
+      <ul>
+       <li>Put-Call parity is a core principle that defines the fixed relation between a European Put and Call option.</li>
+      </ul>
+      <p class="formula">Put option price — Call option price = Present value of strike price + Present value of dividends — Price of stock</p>
+      <p class="formula">Price of stock = Call price + PDV Strike + PDV Dividends — Put price</p>
+      <ul>
+       <li><strong>For European options, this must hold (up to small deviations such as transaction costs), otherwise there would be arbitrage profit opportunities</strong></li>
+      </ul>
+      <p><u>Personal point of interest:</u></p>
+      <ul>
+       <li>I’ve heard of an exotic derivative, which is called the <u>lookback option</u>, only sold over the counter between large firms.</li>
+       <li>Yet, it stands out because it does something most contracts cannot do — only look at the maximum or the minimum of a price in order to secure the most favorable payoff.</li>
+       <li>But on the other hand, the strike price is decided at the expiration date using the asset’s lowest price (for a call) and highest (for a put). That's only if the exact lookback option includes a <strong>floating strike price.</strong></li>
+       <li>Oftentimes, the strike price is fixed.</li>
+       <li>But obviously it’s not free money, these cost much more than ordinary derivatives — As a rule of thumb, these kinds of derivatives usually cost 2-3 times more than ordinary European derivatives.</li>
+       <li>As an ECP (Eligible Contract Participant), you have a chance at being able to trade these kinds of derivatives through your bank.</li>
+       <li>Or, with a broker, some having it inside <u>“structured notes”</u></li>
+      </ul>
+    </div>
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <ol>
+        <li>Lecture slides: Robert Shiller, <em>Financial Markets</em>, Yale University.</li>
+        <li>Interest rate parity and the belligerents of the Yom Kippur War: Wikipedia.</li>
+        <li>Index futures formula: Groww.</li>
+      </ol>
+    </section>
+
+    <a class="back" href="../margin-notes.html">All Margin Notes</a>
+  </article>
+</main>
+
+<footer>
+  GRAM · UFEE · Ecolint · <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
